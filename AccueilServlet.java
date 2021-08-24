@@ -44,7 +44,19 @@ public class AccueilServlet extends HttpServlet {
 		doGet(request, response);
 		
 		  RequestDispatcher disp = request.getRequestDispatcher("/accueil.jsp");
-		  disp.forward(request, response);
+		  
+		  String contient=request.getParameter("contient");
+		  String categorie=request.getParameter("categorie");
+		  
+		  ArticleVenduManager articleVenduManager = ArticleVenduManager.getInstance();
+		  
+		  List<ArticleVendu> lstArticles = new ArrayList<>();
+		  
+		  //penser surcharge de méthode pour getArticles!!!
+		  
+		  lstArticles=articleVenduManager.getArticles(contient, categorie);
+		  
+		  disp.forward(request, response);;
 	}
 
 }
