@@ -18,6 +18,9 @@
 	<form action="/accueil" method="post">
 	<h3>Filtres :</h3>
 	contient : <input type="text" name="contient"><br>
+		
+	<!-- par défaut la catégorie est sur toutes, penser à modifier code en consequence -->
+		
 	catégorie : 
 	<select name="categorie">
 	    <option value="info">Informatique</option>
