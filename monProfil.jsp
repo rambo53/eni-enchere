@@ -8,7 +8,9 @@
 <title>mon profil</title>
 </head>
 <body>
-
+	
+<jsp:include page="navbar.jsp"></jsp:include>
+	
 	pseudo : ${vendeur.pseudo}<br>
 	nom: ${vendeur.nom}<br>
 	prenom : ${vendeur.prenom}<br>
