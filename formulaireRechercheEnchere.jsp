@@ -15,6 +15,9 @@
 	</select>
 	
 	<c:if test=${utilisateur!=null}>
+		
+		<!-- voir listener js pour ajout ou retrait display : none sur checkbox en fonction bouton radio select --> 
+		
 		  <input type="radio" name="achatVente" value="achat" checked>Achats<br>
 		  
 		  	  <input type="checkbox" name="choixListeEnchere" value="enchereOuverte" checked> enchères ouvertes<br>
