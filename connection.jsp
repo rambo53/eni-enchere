@@ -9,9 +9,16 @@
 <body>
 
 	<form action="" method="post">
+	
+		identifiant : <input type="text" name="identifiant">
+		Mot de passe : <input type="password" name="password">
+		<input type="checkbox" name="seSouvenirDeMoi" value="true"> se souvenir de moi<br>
+		<a href="#">Mot de passe oublié</a>
+		<input type="submit" value="Connexion">
+
 	</form>
 	
-	lien créer compte
+	<a href="#">Créer un compte</a>
 
 </body>
 </html>
