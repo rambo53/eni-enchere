@@ -27,6 +27,13 @@ public class AccueilServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		  RequestDispatcher disp = request.getRequestDispatcher("/accueil.jsp");
+		  ArticleVenduManager articleVenduManager = ArticleVenduManager.getInstance();
+		  
+		  List<ArticleVendu> lstArticles = new ArrayList<>();
+		  lstArticles=articleVenduManager.getArticlesEnCours();
+		  
+		  request.setAttribute("lstArticles", lstArticles);
+		  
 		  disp.forward(request, response);
 	}
 
