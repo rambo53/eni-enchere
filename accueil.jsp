@@ -17,7 +17,7 @@
 
 <!-- a voir si besoin test si list articles n'est pas null, ou si valeur null aucun affichage auto --> 
 
-<c:forEach items="${articles}" var="article">
+<c:forEach items="${lstArticles}" var="article">
     <p><c:out value="${article.nomArticle}" /> !</p>
 </c:forEach>
 
