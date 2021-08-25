@@ -26,6 +26,8 @@ public class AccueilServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		//je charge la liste d'article à afficher en fonction param, par defaut toutes encheres en cours
+		
 		  RequestDispatcher disp = request.getRequestDispatcher("/accueil.jsp");
 		  ArticleVenduManager articleVenduManager = ArticleVenduManager.getInstance();
 		  
@@ -43,6 +45,8 @@ public class AccueilServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 		
+		 //je récupère les param de mon form de recherche d'article, je charge la list d'article et je réaffiche ma page
+		
 		  RequestDispatcher disp = request.getRequestDispatcher("/accueil.jsp");
 		  
 		  String contient=request.getParameter("contient");
@@ -53,6 +57,8 @@ public class AccueilServlet extends HttpServlet {
 		  List<ArticleVendu> lstArticles = new ArrayList<>();
 		  
 		  //penser surcharge de méthode pour getArticles!!!
+		
+		// voir pour list d'arraylist d'article, affichage avec boucles foreach imbriquées
 		  
 		  lstArticles=articleVenduManager.getArticles(contient, categorie);
 		  
