@@ -1,5 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%-- 
+    Document   : connection
+    Created on : 25 août 2021, 11:05:38
+    Author     : user
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,17 +14,19 @@
 </head>
 <body>
 
-	<form action="" method="post">
+    <jsp:include page="navbar.jsp"></jsp:include>
+    
+	<form action="ConnectionServlet" method="post">
 	
-		identifiant : <input type="text" name="identifiant">
-		Mot de passe : <input type="password" name="password">
+		identifiant : <input type="text" name="identifiant"><br>
+		Mot de passe : <input type="password" name="password"><br>
 		<input type="checkbox" name="seSouvenirDeMoi" value="true"> se souvenir de moi<br>
-		<a href="#">Mot de passe oublié</a>
+		<a href="#">Mot de passe oublié</a><br>
 		<input type="submit" value="Connexion">
 
 	</form>
 	
-	<a href="#">Créer un compte</a>
+	<a href="MonProfilModifServlet">Créer un compte</a>
 
 </body>
 </html>
