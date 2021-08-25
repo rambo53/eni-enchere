@@ -1,22 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%-- 
+    Document   : navbar
+    Created on : 25 août 2021, 09:11:59
+    Author     : user
+--%>
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
     pageEncoding="ISO-8859-1"%>
 
 <nav>
-	<a href="#">ENI	- Encheres</a>
+	<a href="AccueilServlet">ENI	- Encheres</a>
 	
-	<c:if test=${utilisateur==null}>
+	<c:if test="${utilisateur==null}">
 		<ul>
-			<li><a href="/connection">S'incrire - Se connecter</a></li>
+			<li><a href="ConnectionServlet">S'incrire - Se connecter</a></li>
 		</ul>
 	</c:if>
 	
-	<c:if test=${utilisateur!=null}>
+	<c:if test="${utilisateur!=null}">
 		<ul>
-			<li><a href="/accueil">Enchères</a></li>
-			<li><a href="/nouvelleVente">Vendre un article</a></li>
-			<li><a href="/monProfil">Mon profil</a></li>
-			<li><a href="/accueil">Déconnexion</a></li>
+			<li><a href="AccueilServlet">Enchères</a></li>
+			<li><a href="NouvelleEnchereServlet">Vendre un article</a></li>
+			<li><a href="MonProfilServlet">Mon profil</a></li>
+			<li><a href="DeconnexionServlet">Déconnexion</a></li>
 		</ul>
 	</c:if>
 
