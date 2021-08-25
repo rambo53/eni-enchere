@@ -1,5 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%-- 
+    Document   : monProfil
+    Created on : 25 août 2021, 11:22:32
+    Author     : user
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
         <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
@@ -20,7 +25,7 @@
 	code postal : ${vendeur.codePostal}<br>
 	ville : ${vendeur.ville}<br>
 
-	<c:if test=${vendeur.noUtilisateur==utilisateur.noUtilisateur}>
+	<c:if test="${vendeur.noUtilisateur==utilisateur.noUtilisateur}">
 		<a href="/monProfilModif">Modifier</a>
 	</c:if>
 
