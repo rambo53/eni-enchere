@@ -21,7 +21,7 @@
 	<c:if test="${utilisateur!=null}">
 		<ul>
 			<li><a href="AccueilServlet">Enchères</a></li>
-			<li><a href="NouvelleEnchereServlet">Vendre un article</a></li>
+			<li><a href="NouvelleVenteServlet">Vendre un article</a></li>
 			<li><a href="MonProfilServlet">Mon profil</a></li>
 			<li><a href="DeconnexionServlet">Déconnexion</a></li>
 		</ul>
