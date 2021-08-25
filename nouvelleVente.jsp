@@ -1,5 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%-- 
+    Document   : nouvelleVente
+    Created on : 25 août 2021, 13:20:31
+    Author     : user
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
         <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
@@ -47,8 +52,8 @@
 	
 	<!-- mène vers servlet spéciale pour delete qui forward ensuite vers l'accueil --> 
 	
-	<c:if test=${article.noArticle!=null}>
-		<a href="/annulerLaVente">Annuler la vente</a>
+	<c:if test="${article.noArticle!=null}">
+		<a href="EffaceVenteServlet">Annuler la vente</a>
 	</c:if>
 </form>
 
