@@ -17,7 +17,9 @@
     <jsp:include page="navbar.jsp"></jsp:include>
     
 	<form action="ConnectionServlet" method="post">
-	
+            <!-- affichera message si pbm identification utilisateur -->
+        <c:if test="${pbmConnection != null}">${pbmConnection}</c:if>
+        
 		identifiant : <input type="text" name="identifiant"><br>
 		Mot de passe : <input type="password" name="password"><br>
 		<input type="checkbox" name="seSouvenirDeMoi" value="true"> se souvenir de moi<br>
