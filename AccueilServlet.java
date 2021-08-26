@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servlet;
+package fr.eni.servlet;
 
+import fr.eni.bll.ArticleVenduManager;
+import fr.eni.bo.ArticleVendu;
 import java.io.IOException;
 
 import java.util.ArrayList;
@@ -18,7 +20,8 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author user
+ * @author user ma servlet accueil qui me renvoie ma page d'acceuil avec les listes d'articles souhaité par
+ * l'utilisateur, et qui lui permet d'accéder à ses param persos si il est connecté, ou d'enchèrir, consulter ses ventes...
  */
 @WebServlet(name = "AccueilServlet", urlPatterns = {"/AccueilServlet"})
 public class AccueilServlet extends HttpServlet {
@@ -30,12 +33,14 @@ public class AccueilServlet extends HttpServlet {
         //je charge la liste d'article à afficher en fonction param, par defaut toutes encheres en cours
         
 		  RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
-		 // ArticleVenduManager articleVenduManager = ArticleVenduManager.getInstance();
+		  ArticleVenduManager articleVenduManager = ArticleVenduManager.getInstance();
+                  
+		  //par defaut toutes encheres en cours
+                  
+		  List<ArticleVendu> lstArticles = new ArrayList<>();
+		  lstArticles=articleVenduManager.getListArticle();
 		  
-		  //List<ArticleVendu> lstArticles = new ArrayList<>();
-		  //lstArticles=articleVenduManager.getArticlesEnCours();
-		  
-		  //request.setAttribute("lstArticles", lstArticles);
+		  request.setAttribute("lstArticles", lstArticles);
 		  
 		  disp.forward(request, response);
     }
@@ -58,7 +63,7 @@ public class AccueilServlet extends HttpServlet {
 		  
 		  //penser surcharge de méthode pour getArticles!!!
 		  
-		  //lstArticles=articleVenduManager.getArticles(contient, categorie);
+		  //lstArticles=articleVenduManager.getListArticle(contient, categorie);
 		  
 		  disp.forward(request, response);
     }
