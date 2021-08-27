@@ -17,24 +17,25 @@
 	
 	<h2>Mon Profil</h2>
 	
-        <form method="post" action="/modifProfil"><br>
-		pseudo : <input type="text"><br>
-		nom : <input type="text"><br>
-		prenom : <input type="text"><br>
-		email : <input type="text"><br>
-		telephone : <input type="text"><br>
-		rue : <input type="text"><br>
-		code postal : <input type="text"><br>
-		ville : <input type="text"><br>
-		mot de passe : <input type="text"><br>
+        <form method="post" action="MonProfilModifServlet"><br>
+            
+            pseudo : <input type="text" name="pseudo" pattern="[A-Za-z][0-9]" required="required"><br>
+            nom : <input type="text" name="nom" required="required"><br>
+            prenom : <input type="text" name="prenom" required="required"><br>
+            email : <input type="email" name="mail" required="required"><br>
+            telephone : <input type="tel" name="telephone"><br>
+            rue : <input type="text" name="rue" required="required"><br>
+            code postal : <input type="text" name="codePostal" required="required"><br>
+            ville : <input type="text" name="ville" required="required"><br>
+            mot de passe : <input type="password" name="motDePasse" required="required"><br>
 		
 		<c:if test="${utilisateur!=null}">
-			nouveau mot de passe : <input type="text"><br>
+			nouveau mot de passe : <input type="password" required="required"><br>
 			
 			Credit dispo : ${Utilisateur.credit}<br>
 		</c:if>
 		
-		confirmation : <input type="text"><br>
+            confirmation : <input type="password" name="confirmPassword" required="required"><br>
 		
 		<c:if test="${utilisateur==null}">
 			<input type="submit" value="Créer"><br>
